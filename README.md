@@ -9,6 +9,8 @@
 
 <div align="center">
 
+上图来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，强烈安利
+
 此项目依赖于[YunzaiBot](https://github.com/Le-niao/Yunzai-Bot)
 
 [![访问量](https://profile-counter.glitch.me/MuXia-js-plugin/count.svg)](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia)
