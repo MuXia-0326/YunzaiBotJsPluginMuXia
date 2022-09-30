@@ -1,6 +1,19 @@
 
-# 云仔机器人js插件需要依赖于[云仔机器人](https://github.com/Le-niao/Yunzai-Bot)
+<p align="center">
+  <a href="https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia">
+    <img width="200" src="https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/readme/project_logo.png">
+  </a>
+</p>
 
+<h1 align="center">MuXia-js-plugin</h1>
+
+<div align="center">
+
+# 此项目依赖于[YunzaiBot](https://github.com/Le-niao/Yunzai-Bot)
+
+[![访问量](https://profile-counter.glitch.me/YunzaiBotJsPluginMuXia/count.svg)](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia)
+
+</div>
 # 插件列表
 
 | 插件名称|支持v2|支持v3|备注|
