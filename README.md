@@ -9,9 +9,9 @@
 
 <div align="center">
 
-# 此项目依赖于[YunzaiBot](https://github.com/Le-niao/Yunzai-Bot)
+此项目依赖于[YunzaiBot](https://github.com/Le-niao/Yunzai-Bot)
 
-[![访问量](https://profile-counter.glitch.me/YunzaiBotJsPluginMuXia/count.svg)](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia)
+[![访问量](https://profile-counter.glitch.me/MuXia-js-plugin/count.svg)](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia)
 
 </div>
 # 插件列表
