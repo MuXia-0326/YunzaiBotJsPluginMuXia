@@ -7,6 +7,7 @@ import plugin from "../../lib/plugins/plugin.js";
 
 //复读阈值
 const repeaterThreshold = 3;
+const redisTime = 3600 * 15;
 
 const redisKeyPrefix = "muxia:plugin:autoRepeater:";
 
@@ -17,7 +18,7 @@ export class autoRepeater extends plugin {
             dsc: "检测群聊内容，当出现多次内容后，自动进行复读",
             /** https://oicqjs.github.io/oicq/#events */
             event: "message.group",
-            priority: 1800,
+            priority: 60000,
             rule: [
                 {
                     /** 命令正则匹配 */
@@ -41,9 +42,9 @@ export class autoRepeater extends plugin {
 
             let redisMsg = JSON.parse(await redis.get(redisKey));
             if (redisMsg) {
-                redis.set(redisKey, JSON.stringify({ count: redisMsg.count + 1, imgUrl: msg.url }));
+                redis.setEx(redisKey, redisTime, JSON.stringify({ count: redisMsg.count + 1, imgUrl: msg.url }));
             } else {
-                redis.set(redisKey, JSON.stringify({ count: 1, imgUrl: msg.url }));
+                redis.setEx(redisKey, redisTime, JSON.stringify({ count: 1, imgUrl: msg.url }));
             }
 
             redisMsg = JSON.parse(await redis.get(redisKey));
@@ -56,9 +57,9 @@ export class autoRepeater extends plugin {
 
             let redisMsg = JSON.parse(await redis.get(redisKey));
             if (redisMsg) {
-                redis.set(redisKey, JSON.stringify({ count: redisMsg.count + 1, sendText: msg.text }));
+                redis.setEx(redisKey, redisTime, JSON.stringify({ count: redisMsg.count + 1, sendText: msg.text }));
             } else {
-                redis.set(redisKey, JSON.stringify({ count: 1, sendText: msg.text }));
+                redis.setEx(redisKey, redisTime, JSON.stringify({ count: 1, sendText: msg.text }));
             }
 
             redisMsg = JSON.parse(await redis.get(redisKey));
@@ -67,5 +68,7 @@ export class autoRepeater extends plugin {
                 redis.del(redisKey);
             }
         }
+
+        return fasle;
     }
 }
