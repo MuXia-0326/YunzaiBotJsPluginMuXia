@@ -3,6 +3,7 @@
  * @Date: 2022/09/21
  */
 import { segment } from "oicq";
+import BotCfg from "../../lib/config/config.js";
 import plugin from "../../lib/plugins/plugin.js";
 
 export class beatingFast extends plugin {
@@ -111,7 +112,7 @@ function getAtQq(funType, e) {
             if (message[i].qq == Bot.uin) {
                 notBeatMsg(funType, "1", e);
                 return;
-            } else if (message[i].qq == "xxx") {
+            } else if (message[i].qq == BotCfg.masterQQ) {
                 //上面if内，填写自己的qq，可以规避不挨打
                 notBeatMsg(funType, "2", e);
                 return;
