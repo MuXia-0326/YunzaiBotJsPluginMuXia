@@ -22,6 +22,8 @@
 | -------------- | ------- | ------- | ---- |
 | 今日日报       |         | ✔       |      |
 | 撤回机器人消息 |         | ✔       |      |
+| 热搜榜         |         | ✔       |      |
+| 自动复读       |         | ✔       |      |
 | 速速挨打       |         | ✔       |      |
 | 不可以打人     |         | ✔       |      |
 | 禁言套餐       |         | ✔       |      |
@@ -33,21 +35,43 @@
 ### 撤回机器人消息
 
 回复 Bot 的消息，并携带撤回，即可
+
 ![](readme/help_img_6.png)
+
+### 热搜榜
+
+![](readme/help_img_7.png)
+
+![](readme/help_img_8.png)
+
+### 自动复读
+
+根据群内发送的**单文字**或者**单表情**进行跟随复读操作,阈值为 3，可自行更改
+
+![](readme/help_img_9.png)
 
 ### 今日日报 cookie 获取教程
 
 1. 访问[微信公众号](https://mp.weixin.qq.com/)官网
-   ![](readme/help_img_1.png)
+
+    ![](readme/help_img_1.png)
+
 2. 按 f12 打开浏览器控制台,点击 Network
-   ![](readme/help_img_2.png)
+
+    ![](readme/help_img_2.png)
+
 3. 登录微信账号
    登录成功后，在 network 页面找到下图标注的请求，点击
-   ![](readme/help_img_3.png)
+
+    ![](readme/help_img_3.png)
+
 4. 找到 cookie 选项，右键 copy value
-   ![](readme/help_img_4.png)
+
+    ![](readme/help_img_4.png)
+
 5. 粘贴到`my_plugin_get_day_news.js`插件的图示位置
-   ![](readme/help_img_5.png)
+
+    ![](readme/help_img_5.png)
 
 ## 更新日志
 
