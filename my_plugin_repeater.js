@@ -69,6 +69,6 @@ export class autoRepeater extends plugin {
             }
         }
 
-        return fasle;
+        return false;
     }
 }
