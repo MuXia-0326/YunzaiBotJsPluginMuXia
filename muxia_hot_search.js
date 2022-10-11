@@ -40,7 +40,8 @@ export class hotSearch extends plugin {
 
         if (res.status != 200) {
             logger.error("[热搜榜] 微博热搜获取失败");
-            return await this.reply("[热搜榜] 微博热搜获取失败");
+            await e.reply("[热搜榜] 微博热搜获取失败");
+            return true;
         }
         res = await res.json();
         let data = res.data;
@@ -74,7 +75,8 @@ export class hotSearch extends plugin {
 
         if (res.status != 200) {
             logger.error("[热搜榜] 知乎热搜获取失败");
-            return await this.reply("[热搜榜] 知乎热搜获取失败");
+            await e.reply("[热搜榜] 知乎热搜获取失败");
+            return true;
         }
         res = await res.json();
         let data = res.data;

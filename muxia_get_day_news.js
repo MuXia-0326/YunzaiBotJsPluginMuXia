@@ -23,13 +23,10 @@ const require = createRequire(import.meta.url);
 */
 const pushTime = "0 30 9 * * ?";
 
-/**
- * 开启定时推送的群号，填写格式如下
- * ["374900636"];
- */
-const groupNumberList = [""];
+//定时推送群号
+const groupNumberList = ["326615777"];
 
-//开启定时任务（需要关闭，注释此行即可）
+//开启定时任务（需要关闭，注释此行即可
 dayPushTask();
 
 /**
@@ -96,7 +93,8 @@ async function sendDayNews(e) {
 
     if (loginRes.status == 200 && loginRes.url.indexOf("?") == -1) {
         logger.error("[今日日报] 登录接口请求失败");
-        return await this.reply("[今日日报] 获取登录token失败，可能cookie失效，请重新配置cookie");
+        await e.reply("[今日日报] 获取登录token失败，可能cookie失效，请重新配置cookie");
+        return true;
     }
 
     let params = loginRes.url.split("?")[1].split("&");
@@ -108,7 +106,8 @@ async function sendDayNews(e) {
 
     if (!token) {
         logger.error("[今日日报] 用户cookie失效");
-        return await this.reply("[今日日报] cookie失效，请重新配置cookie");
+        await e.reply("[今日日报] cookie失效，请重新配置cookie");
+        return true;
     }
 
     /** 用接口获取自定义公众号的fakeid */
@@ -119,7 +118,8 @@ async function sendDayNews(e) {
     // let fakeidRes = await fetch(queryFakeIdUrl, param).catch((err) => logger.error(err));
     // if (fakeidRes.status != 200) {
     //     logger.error("[今日日报] 公众号查询接口失败");
-    //     return await this.reply("[今日日报] 公众号查询接口失败");
+    //     await e.reply("[今日日报] 公众号查询接口失败");
+    //     return true;
     // }
 
     // fakeidRes = await fakeidRes.json();
@@ -127,7 +127,8 @@ async function sendDayNews(e) {
 
     // if (!fakeid) {
     //     logger.error("[获取每日日报] 获取公众号id失败");
-    //     return await this.reply("获取公众号id失败");
+    //     await e.reply("获取公众号id失败");
+    //     return true;
     // }
 
     /** 直接写死公众号fakeid */
@@ -142,7 +143,8 @@ async function sendDayNews(e) {
     /** 判断接口是否请求成功 */
     if (getImgRes.status != 200) {
         logger.error("[今日日报] 获取日报消息失败");
-        return await this.reply("[今日日报] 获取日报消息失败");
+        await e.reply("[今日日报] 获取日报消息失败");
+        return true;
     }
 
     //获取推文url

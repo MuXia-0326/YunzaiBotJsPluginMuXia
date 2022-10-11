@@ -5,6 +5,7 @@
 import fetch from "node-fetch";
 import schedule from "node-schedule";
 import { Group, segment } from "oicq";
+import common from "../../lib/common/common.js";
 import plugin from "../../lib/plugins/plugin.js";
 
 /* 各位代表的意思 *-代表任意值 ？-不指定值，仅日期和星期域支持该字符。 （想了解更多，请自行搜索Cron表达式学习）
@@ -74,7 +75,8 @@ async function getDuckImg(e) {
 
     if (res.status != 200) {
         logger.error("[鸭鸭照] 鸭图获取失败");
-        return await this.reply("[鸭鸭照] 鸭图获取失败");
+        await e.reply("[鸭鸭照] 鸭图获取失败");
+        return;
     }
     res = await res.json();
 
@@ -82,7 +84,7 @@ async function getDuckImg(e) {
 
     if (e instanceof Group) {
         let hour = new Date().getHours();
-        let sendText;
+        let sendText = "";
         if (hour == 8) {
             sendText = "早上好鸭";
         } else if (hour == 12) {
