@@ -7,7 +7,8 @@ import plugin from "../../lib/plugins/plugin.js";
 
 //复读阈值
 const repeaterThreshold = 3;
-const redisTime = 3600 * 15;
+//缓存存储时间 s为单位
+const redisTime = 60 * 15;
 
 const redisKeyPrefix = "muxia:plugin:autoRepeater:";
 
