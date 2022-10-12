@@ -60,6 +60,8 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 
 ### 今日日报 cookie 获取教程
 
+#### 经过测试，cookie 的过期时间大致为三天，目前没找到更好的方法延长 cookie 时间，如果有好方法，请联系我
+
 1. 访问[微信公众号](https://mp.weixin.qq.com/)官网
 
     ![](readme/help_img_1.png)
