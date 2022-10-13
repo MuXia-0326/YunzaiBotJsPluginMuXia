@@ -38,7 +38,19 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 
 ## 使用指南
 
+* windows
+
 将 js 文件复制到`..\Yunzai-Bot\plugins\example`目录下，将 img 下的文件复制到`..\Yunzai-Bot\resources\img`目录下，没有 img 目录新建一个
+
+* linux
+
+在`Yunzai-Bot\plugins`目录下执行下面的命令
+```sh
+git clone https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia.git ./muxia
+mv muxia/muxia* example
+mkdir resources/img
+mv muxia/img/* resources/img
+```
 
 ### 撤回机器人消息
 
