@@ -165,6 +165,12 @@ async function sendDayNews(e) {
         }
     }
 
+    if (link) {
+        logger.error("[今日日报] 获取日报url失败");
+        await e.reply("[今日日报] 获取日报url失败");
+        return true;
+    }
+
     //截取页面内容发送消息（这部分借鉴的别人的代码，不是太懂原理）
     const puppeteer = require("puppeteer");
     const browser = await puppeteer.launch({
