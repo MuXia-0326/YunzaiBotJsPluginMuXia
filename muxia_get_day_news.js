@@ -23,8 +23,11 @@ const require = createRequire(import.meta.url);
 */
 const pushTime = "0 30 9 * * ?";
 
-//定时推送群号
-const groupNumberList = ["326615777"];
+/**
+ * 开启定时推送的群号，填写格式如下
+ * ["374900636"];
+ */
+const groupNumberList = [];
 
 //开启定时任务（需要关闭，注释此行即可
 dayPushTask();
@@ -35,7 +38,7 @@ dayPushTask();
  */
 const cookie = "";
 
-export class catNotHit extends plugin {
+export class dayNews extends plugin {
     constructor() {
         super({
             name: "今日日报",
@@ -46,7 +49,7 @@ export class catNotHit extends plugin {
             rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: "^#*(今日)*日报$",
+                    reg: "^#?今日日报$",
                     /** 执行方法 */
                     fnc: "getDayNews"
                 }

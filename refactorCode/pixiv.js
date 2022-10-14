@@ -17,7 +17,7 @@ let sl = 3;
 //撤回时间s为单位
 let delMsg = 90;
 
-export class likeH extends plugin {
+export class pixiv extends plugin {
     constructor() {
         super({
             /** 功能名称 */

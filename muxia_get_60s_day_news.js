@@ -1,6 +1,6 @@
 /*
  * @Author: MuXia
- * @Date: 2022/10/11
+ * @Date: 2022/09/16
  */
 import fetch from "node-fetch";
 import schedule from "node-schedule";
@@ -19,7 +19,7 @@ import plugin from "../../lib/plugins/plugin.js";
     │  └──────────── 分，取值：0 - 59
     └─────────────── 秒，取值：0 - 59（可选）
 */
-const pushTime = "0 0 8,12,19,21 * * ?";
+const pushTime = "0 30 8 * * ?";
 
 /**
  * 开启定时推送的群号，填写格式如下
@@ -28,77 +28,66 @@ const pushTime = "0 0 8,12,19,21 * * ?";
 const groupNumberList = [];
 
 //开启定时任务（需要关闭，注释此行即可
-dayPushDuckImg();
+dayPushTask();
 
-export class duckImg extends plugin {
+export class day60sNews extends plugin {
     constructor() {
         super({
-            name: "鸭鸭照",
-            dsc: "随机鸭图",
+            name: "60s读懂世界",
+            dsc: "获取60s读懂世界的日报",
             /** https://oicqjs.github.io/oicq/#events */
             event: "message.group",
             priority: 1000,
             rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: "^#?(哎鸭|哎呀|aiya)$",
+                    reg: "^#?60s日报$",
                     /** 执行方法 */
-                    fnc: "duckImg"
+                    fnc: "get60sDayNews"
                 }
             ]
         });
     }
 
-    async duckImg(e) {
-        getDuckImg(e);
-
-        //返回true 阻挡消息不再往下
-        return true;
+    async get60sDayNews(e) {
+        send60sDayNews(e);
     }
 }
 
 /** 定时推送 */
-function dayPushDuckImg() {
+function dayPushTask() {
     schedule.scheduleJob(pushTime, () => {
         for (var i = 0; i < groupNumberList.length; i++) {
             let group = Bot.pickGroup(groupNumberList[i]);
-            getDuckImg(group);
+            send60sDayNews(group);
             common.sleep(3000);
         }
     });
 }
 
-async function getDuckImg(e) {
-    /** 鸭鸭图url */
-    let url = `https://random-d.uk/api/v2/random`;
+/** 发送60s日报 */
+async function send60sDayNews(e) {
+    /** 60s日报url */
+    let url = `http://bjb.yunwj.top/php/tp/lj.php`;
     let res = await fetch(url).catch((err) => logger.error(err));
 
     if (res.status != 200) {
-        logger.error("[鸭鸭照] 鸭图获取失败");
-        await e.reply("[鸭鸭照] 鸭图获取失败");
+        logger.error("[60s读懂世界] 日报获取失败");
+        await e.reply("[60s读懂世界] 日报获取失败");
         return;
     }
     res = await res.json();
 
-    let msg = [segment.image(res.url), res.message];
+    let msg = [segment.image(res.tp)];
 
     if (e instanceof Group) {
-        let hour = new Date().getHours();
-        let sendText = "";
-        if (hour == 8) {
-            sendText = "早上好鸭";
-        } else if (hour == 12) {
-            sendText = "中午好鸭";
-        } else if (hour == 19) {
-            sendText = "晚上好鸭";
-        } else if (hour == 21) {
-            sendText = "晚安鸭";
-        }
-        msg.unshift(sendText);
         e.sendMsg(msg);
     } else {
         //添加@成员
         msg.unshift(segment.at(e.user_id));
         e.reply(msg);
     }
+
+    //返回true 阻挡消息不再往下
+    return true;
 }
