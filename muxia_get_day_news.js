@@ -151,7 +151,7 @@ async function sendDayNews(e) {
     }
 
     //获取推文url
-    let link;
+    let link = "";
 
     getImgRes = await getImgRes.json();
     let msgList = getImgRes.app_msg_list;
@@ -165,7 +165,7 @@ async function sendDayNews(e) {
         }
     }
 
-    if (link) {
+    if (link == "") {
         logger.error("[今日日报] 获取日报url失败");
         await e.reply("[今日日报] 获取日报url失败");
         return true;
