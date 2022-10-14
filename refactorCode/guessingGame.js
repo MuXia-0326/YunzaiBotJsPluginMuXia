@@ -14,6 +14,9 @@ let botOut;
 let botOutText;
 let userOut;
 
+let startFlag = 0;
+let duelUser;
+
 const url_1 = "https://iw233.cn/API/Random.php";
 const url_2 = "http://ovooa.com/API/meizi/api.php?type=image";
 
@@ -42,6 +45,10 @@ export class guessingGame extends plugin {
                     fnc: "mora"
                 },
                 {
+                    reg: "^石头|剪刀|布$",
+                    fnc: "doMora"
+                },
+                {
                     reg: "^#?给我色图$",
                     fnc: "force"
                 },
@@ -54,6 +61,14 @@ export class guessingGame extends plugin {
     }
 
     async mora(e) {
+        if (startFlag == 1) {
+            await this.reply("\n小派蒙没办法同时跟多个人决斗", false, { at: true });
+            return;
+        } else {
+            startFlag = 1;
+            duelUser = e.user_id;
+        }
+
         botOut = Math.floor(Math.random() * 3);
         if (botOut == 0) {
             botOutText = "我出石头";
@@ -63,15 +78,24 @@ export class guessingGame extends plugin {
             botOutText = "我出布";
         }
 
-        /** 设置上下文，后续接收到内容会执行getKeyword方法 */
-        this.setContext("doMora", e.isGroup, 20);
-
         /** 回复 */
-        await this.reply("\n给你20秒，跟我来把猜拳，赢了奖励，输了禁言！你先发,石头，剪刀，布，出吧", false, { at: true });
+        await e.reply("\n给你20秒，跟我来把猜拳，赢了奖励，输了禁言！你先发,石头，剪刀，布，出吧", false, { at: true });
+
+        setTimeout(function () {
+            if (startFlag == 1) {
+                e.reply("\n20秒已过，还不出，给我寄！", false, { at: true });
+                e.group.muteMember(duelUser, 10);
+                startFlag = 0;
+                duelUser = "";
+            }
+        }, 20 * 1000);
     }
 
-    doMora() {
-        let e = this.e;
+    async doMora(e) {
+        if (duelUser != e.user_id) {
+            return;
+        }
+
         if (e.msg == "石头") {
             userOut = 0;
         } else if (e.msg == "剪刀") {
@@ -80,12 +104,9 @@ export class guessingGame extends plugin {
             userOut = 2;
         } else {
             e.reply(`能不能好好玩游戏！请重新开始决斗`);
-            this.finish("doMora", e.isGroup);
             return;
         }
         sendResult(e);
-        /** 结束上下文 */
-        this.finish("doMora", e.isGroup);
     }
 
     async force(e) {
@@ -168,5 +189,8 @@ async function sendResult(e) {
         e.reply(`${botOutText}，你输了，给我寄！`);
         e.group.muteMember(e.user_id, 30);
     }
+
+    startFlag = 0;
+    duelUser = "";
     return;
 }
