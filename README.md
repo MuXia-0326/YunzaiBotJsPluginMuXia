@@ -63,7 +63,9 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 ```sh
 git clone https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia.git ./muxia
 mv muxia/muxia* example
+cd ..
 mkdir resources/img
+cd plugins
 mv muxia/img/* resources/img
 ```
 
