@@ -69,6 +69,8 @@ cd plugins
 mv muxia/img/* resources/img
 ```
 
+> 上述命令也是实现的 windows 指南下的两步操作，如有错误，请联系更改
+
 <details>
 <summary>撤回机器人消息</summary>
 
