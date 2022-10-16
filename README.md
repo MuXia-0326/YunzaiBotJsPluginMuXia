@@ -139,4 +139,4 @@ mv muxia/img/* resources/img
 
 -   群号：374900636
 -   [Yunzai-Bot](https://github.com/Le-niao/Yunzai-Bot)
--   Yunzai-Bot 插件库：[☞github](https://github.com/yhArcadia/Yunzai-Bot-plugins-index) [☞gitee](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
+-   Yunzai-Bot 插件库：[☞github](https://github.com/yhArcadia/Yunzai-Bot-plugins-index) [☞gitee (git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico))](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
