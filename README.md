@@ -51,27 +51,29 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 
 ## 使用指南
 
--   windows
+-   **windows 系统**
 
     -   `原创插件`使用方法
         1. 将 `muxia` 开头的 js 文件复制到 `..\Yunzai-Bot\plugins\example` 目录下
         2. 将 img 下的文件复制到`..\Yunzai-Bot\resources\img`目录下，`resources`目录下没有`img`目录,自行新建一个
-        
     -   `重构插件`使用方法
         1. 将 `refactorCode` 目录下的 js 文件复制到 `..\Yunzai-Bot\plugins\example`
 
--   linux
+-   **linux 系统**
+
     -   **前置操作 (重要 重要 重要 重要 重要)**
-    
+
         **在 Yunzai-Bot 项目目录下执行**
+
         ```sh
         cd plugins
         git clone https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia.git ./muxia
         ```
-        
+
     -   `原创插件`使用方法
-    
+
         在 **`Yunzai-Bot/plugins`** 目录下执行下面的命令
+
         ```sh
         mv muxia/*.js example
         cd ..
@@ -79,15 +81,14 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
         cd plugins
         mv muxia/img/* resources/img
         ```
-        
+
     -   `重构插件`使用方法
-    
+
         在 **`Yunzai-Bot/plugins`** 目录下执行下面的命令
+
         ```sh
         mv muxia/refactorCode/*.js example
         ```
-
-> 上述命令也是实现的 windows 指南下的两步操作，如有错误，请联系更改
 
 <details>
 <summary>撤回机器人消息</summary>
@@ -116,7 +117,8 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 
 </details>
 
-### 今日日报 cookie 获取教程
+<details>
+<summary style="font-weight: 600; font-size:20px;">今日日报 cookie 获取教程</summary>
 
 #### 经过测试，cookie 的过期时间大致为三天，目前没找到更好的方法延长 cookie 时间，如果有好方法，请联系我
 
@@ -140,6 +142,8 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 5. 粘贴到`my_plugin_get_day_news.js`插件的图示位置
 
     ![](readme/help_img_5.png)
+
+</details>
 
 ## 更新日志
 
