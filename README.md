@@ -118,7 +118,7 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 </details>
 
 <details>
-<summary style="font-weight: 600; font-size:20px;">今日日报 cookie 获取教程</summary>
+<summary>今日日报 cookie 获取教程</summary>
 
 #### 经过测试，cookie 的过期时间大致为三天，目前没找到更好的方法延长 cookie 时间，如果有好方法，请联系我
 
