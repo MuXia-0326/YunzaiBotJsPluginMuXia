@@ -56,17 +56,21 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
     -   `原创插件`使用方法
         1. 将 `muxia` 开头的 js 文件复制到 `..\Yunzai-Bot\plugins\example` 目录下
         2. 将 img 下的文件复制到`..\Yunzai-Bot\resources\img`目录下，`resources`目录下没有`img`目录,自行新建一个
+        
     -   `重构插件`使用方法
         1. 将 `refactorCode` 目录下的 js 文件复制到 `..\Yunzai-Bot\plugins\example`
 
 -   linux
     -   **前置操作 (重要 重要 重要 重要 重要)**
+    
         **在 Yunzai-Bot 项目目录下执行**
         ```sh
         cd plugins
         git clone https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia.git ./muxia
         ```
+        
     -   `原创插件`使用方法
+    
         在 **`Yunzai-Bot/plugins`** 目录下执行下面的命令
         ```sh
         mv muxia/*.js example
@@ -75,7 +79,9 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
         cd plugins
         mv muxia/img/* resources/img
         ```
+        
     -   `重构插件`使用方法
+    
         在 **`Yunzai-Bot/plugins`** 目录下执行下面的命令
         ```sh
         mv muxia/refactorCode/*.js example
