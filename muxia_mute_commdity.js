@@ -5,6 +5,18 @@
 import { segment } from "oicq";
 import plugin from "../../lib/plugins/plugin.js";
 
+/**
+ * 配置违禁词
+ * 多个违禁词请用 | 隔开
+ * 如：群主女装|给我色色
+ */
+const forbiddenWord = "群主挨打";
+
+/**
+ * 触发违禁词时 机器人的回复语句
+ */
+const replyStatement = "不可以打群主，看我禁言你！";
+
 export class muteCommdity extends plugin {
     constructor() {
         super({
@@ -16,7 +28,7 @@ export class muteCommdity extends plugin {
             rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: "^.*(群主挨打).*",
+                    reg: `^.*(${forbiddenWord}).*`,
                     /** 执行方法 */
                     fnc: "muteCommdity"
                 },
@@ -40,7 +52,7 @@ export class muteCommdity extends plugin {
         const imgIndex = rand(1, 4);
 
         //发送消息
-        const text = "\n不可以打群主，看我禁言你！";
+        const text = `\n${replyStatement}`;
         let msg = [
             //@用户
             segment.at(e.user_id),
