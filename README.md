@@ -27,27 +27,27 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 
 ## 原创插件
 
-| 插件名称       | 支持 v2 | 支持 v3 | 使用帮助                                                                                                                |
-| -------------- | ------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
-| 今日日报       |         | ✔       | [今日日报使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/get_day_news.md)         |
-| 60s 日报       |         | ✔       | [60s 日报使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/get_60s_day_news.md)     |
-| 撤回机器人消息 |         | ✔       | [撤回机器人消息使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/recall_bot_msg.md) |
-| 热搜榜         |         | ✔       | [热搜榜使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/hot_search.md)             |
-| 自动复读       |         | ✔       | [自动复读使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/repeater.md)             |
-| 鸭鸭照         |         | ✔       | [鸭鸭照使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/duck_img.md)               |
-| 速速挨打       |         | ✔       | [速速挨打使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/beating_fast.md)         |
-| 不可以打人     |         | ✔       | [不可以打人使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/can_not_hit.md)        |
-| 禁言套餐       |         | ✔       | [禁言套餐使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/mute_commdity.md)        |
+| 插件名称 | 支持 v2 | 支持 v3 | 对应项目文件 | 使用帮助 |
+| ------ | ------ | ------- | ---------- | ------- |
+| 今日日报 | ❌ | ✔ | [muxia_get_day_news.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_get_day_news.js) | [今日日报使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/get_day_news.md) |
+| 60s 日报 | ❌ | ✔ | [muxia_get_60s_day_news.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_get_60s_day_news.js) | [60s 日报使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/get_60s_day_news.md) |
+| 撤回机器人消息 | ❌ | ✔ | [muxia_repeater.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_repeater.js) | [撤回机器人消息使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/recall_bot_msg.md) |
+| 热搜榜 | ❌ | ✔ | [muxia_hot_search.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_hot_search.js) | [热搜榜使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/hot_search.md) |
+| 自动复读 | ❌ | ✔ | [muxia_repeater.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_repeater.js) | [自动复读使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/repeater.md) |
+| 鸭鸭照 | ❌ | ✔ | [muxia_duck_img.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_duck_img.js) | [鸭鸭照使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/duck_img.md) |
+| 速速挨打 | ❌ | ✔ | [muxia_beating_fast.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_beating_fast.js) | [速速挨打使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/beating_fast.md) |
+| 不可以打人 | ❌ | ✔ | [muxia_can_not_hit.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_can_not_hit.js) | [不可以打人使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/can_not_hit.md) |
+| 禁言套餐 | ❌ | ✔ | [muxia_mute_commdity.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_mute_commdity.js) | [禁言套餐使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/mute_commdity.md) |
 
 ## 重构插件
 
 ### 重构插件如有侵权，请联系我删除
 
-| 插件名称 | 支持 v2 | 支持 v3 | 重构自                                                                             | 使用帮助                                                                                                        |
-| -------- | ------- | ------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| 动物     |         | ✔       | [cat.js](https://gitee.com/koinori/Icepray-plugin/blob/master/apps/cat.js)         | [动物使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/animal.md)           |
-| 猜拳游戏 |         | ✔       | [dawo.js](https://github.com/SmallK111407/earth-k-plugin/blob/master/apps/dawo.js) | [猜拳游戏使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/guessingGame.md) |
-| 色色     |         | ✔       | [sese.js](https://github.com/SmallK111407/earth-k-plugin/blob/master/apps/sese.js) | [色色使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/pixiv.md)            |
+| 插件名称 | 支持 v2 | 支持 v3 | 重构自 |  对应项目文件 | 使用帮助 |
+| ------- | ------ | ------ | ----- | ----------- | ------- |
+| 动物 | ❌ | ✔ | [cat.js](https://gitee.com/koinori/Icepray-plugin/blob/master/apps/cat.js) | [refactorCode/animal.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/refactorCode/animal.js) | [动物使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/animal.md) |
+| 猜拳游戏 | ❌ | ✔ | [dawo.js](https://github.com/SmallK111407/earth-k-plugin/blob/master/apps/dawo.js) | [refactorCode/guessingGame.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/refactorCode/guessingGame.js) | [猜拳游戏使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/guessingGame.md) |
+| 色色 | ❌ | ✔ | [sese.js](https://github.com/SmallK111407/earth-k-plugin/blob/master/apps/sese.js) | [refactorCode/pixiv.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/refactorCode/pixiv.js) | [色色使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/pixiv.md) |
 
 ## 使用指南
 
