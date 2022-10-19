@@ -4,7 +4,7 @@
 
 当群成员发言中出现 **挨打** / **挨锤** / **揍他** 进行语言提示制止
 
-![](./imgs/canNotHit/1.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/canNotHit/1.png)
 
 ## 注意事项
 

@@ -4,6 +4,6 @@
 
 使用 **微博热搜** / **知乎热搜** 主动触发
 
-![](./imgs/hotSearch/1.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/hotSearch/1.png)
 
-![](./imgs/hotSearch/2.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/hotSearch/2.png)

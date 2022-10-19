@@ -14,21 +14,21 @@
 
 -   下图为修改定时任务的触发时间的代码
 
-    ![](./imgs/dayNews/1.jpg)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/dayNews/1.jpg)
 
 -   下图为设置定时任务推送群号的代码
 
-    ![](./imgs/dayNews/2.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/dayNews/2.png)
 
 *   下图为定时任务的开关
 
     开启状态
 
-    ![](./imgs/dayNews/3.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/dayNews/3.png)
 
     关闭状态
 
-    ![](./imgs/dayNews/4.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/dayNews/4.png)
 
 ### cookie 配置教程
 
@@ -36,21 +36,21 @@
 
 1. 访问[微信公众号](https://mp.weixin.qq.com/)官网
 
-    ![](./imgs/dayNews/help_img_1.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/dayNews/help_img_1.png)
 
 2. 按 f12 打开浏览器控制台,点击 Network
 
-    ![](./imgs/dayNews/help_img_2.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/dayNews/help_img_2.png)
 
 3. 登录微信账号
    登录成功后，在 network 页面找到下图标注的请求，点击
 
-    ![](./imgs/dayNews/help_img_3.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/dayNews/help_img_3.png)
 
 4. 找到 cookie 选项，右键 copy value
 
-    ![](./imgs/dayNews/help_img_4.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/dayNews/help_img_4.png)
 
 5. 粘贴到`my_plugin_get_day_news.js`插件的图示位置
 
-    ![](./imgs/dayNews/help_img_5.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/dayNews/help_img_5.png)

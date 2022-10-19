@@ -4,7 +4,7 @@
 
 使用 **来点色图** 主动触发
 
-![](./imgs/pixiv/1.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/pixiv/1.png)
 
 > 获取的图片会在一定时间内撤回
 

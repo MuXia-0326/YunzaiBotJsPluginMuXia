@@ -4,4 +4,4 @@
 
 回复机器人消息，并附带 **撤回** 字样（如果机器人的权限够大，还能顺便撤回回复消息)
 
-![](./imgs/recallBotMsg/1.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/recallBotMsg/1.png)

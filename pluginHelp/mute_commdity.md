@@ -4,7 +4,7 @@
 
 自行配置违禁词，触发违禁词进行禁言操作，并撤回违禁发言（撤回违禁发言需要管理员/群主权限）
 
-![](./imgs/muteCommdity/1.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/muteCommdity/1.png)
 
 > 演示图片由于我是群主，所以禁言和撤回消息都没权利（代码是实现了对应操作的）
 
@@ -16,7 +16,7 @@
 
 **以下所有操作都是在，打开项目里面的 `muxia_mute_commdity.js` 文件前提下进行操作的**
 
-![](./imgs/muteCommdity/2.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/muteCommdity/2.png)
 
 ## 注意事项
 

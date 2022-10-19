@@ -4,9 +4,9 @@
 
 @一个群成员并携带 **揍他** / **拍拍** 进行操作
 
-![](./imgs/beatingFast/1.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/beatingFast/1.png)
 
-![](./imgs/beatingFast/2.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/beatingFast/2.png)
 
 ## 注意事项
 

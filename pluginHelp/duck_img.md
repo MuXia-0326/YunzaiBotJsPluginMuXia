@@ -14,18 +14,18 @@
 
 -   下图为修改定时任务的触发时间的代码
 
-    ![](./imgs/duckImg/1.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/duckImg/1.png)
 
 -   下图为设置定时任务推送群号的代码
 
-    ![](./imgs/duckImg/2.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/duckImg/2.png)
 
 *   下图为定时任务的开关
 
     开启状态
 
-    ![](./imgs/duckImg/3.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/duckImg/3.png)
 
     关闭状态
 
-    ![](./imgs/duckImg/4.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/duckImg/4.png)

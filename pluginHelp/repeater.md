@@ -4,7 +4,7 @@
 
 根据群友发言随机复读
 
-![](./imgs/repeater/1.png)
+![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/repeater/1.png)
 
 ## 配置指南
 
@@ -14,7 +14,7 @@
 
 -   下图为修改复读阈值的代码
 
-    ![](./imgs/repeater/2.png)
+    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/repeater/2.png)
 
     复读阈值:即重复内容出现多少次，机器人就会触发复读操作
 
