@@ -17,7 +17,7 @@ export class beatingFast extends plugin {
             rule: [
                 {
                     /** 命令正则匹配 */
-                    reg: "^[\\s\\S]*(小派蒙)?揍他[\\s\\S]*$",
+                    reg: "^揍他$",
                     /** 执行方法 */
                     fnc: "beatingFast"
                 },
@@ -53,7 +53,7 @@ export class beatingFast extends plugin {
             //获取发送图片序号
             const imgIndex = rand(0, messageImg.length - 1);
 
-            const text = "\n接受小派蒙的暴打";
+            const text = "\n接受我的暴打";
             let msg = [
                 //@用户
                 segment.at(atQq),
@@ -139,9 +139,9 @@ function notBeatMsg(funType, type, e) {
     }
 
     if (type == "1") {
-        text = `\n不可以${funText}小派蒙！`;
+        text = `\n不可以${funText}我！`;
     } else if (type == "2") {
-        text = `\n不可以${funText}小派蒙的主人！`;
+        text = `\n不可以${funText}我的主人！`;
     }
 
     let msg = [

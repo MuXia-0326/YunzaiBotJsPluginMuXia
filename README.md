@@ -27,27 +27,27 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 
 ## 原创插件
 
-| 插件名称       | 支持 v2 | 支持 v3 | 备注                                                                                                               |
-| -------------- | ------- | ------- | ------------------------------------------------------------------------------------------------------------------ |
-| 今日日报       |         | ✔       | 使用 **今日日报** 主动触发，支持定时发送，默认开启，需要自行配置群号                                               |
-| 60s 日报       |         | ✔       | 使用 **60s 日报** 主动触发，支持定时发送，默认开启，需要自行配置群号                                               |
-| 撤回机器人消息 |         | ✔       | 回复机器人消息，并附带 **撤回** 字样（如果机器人的权限够大，还能顺便撤回回复消息                                   |
-| 热搜榜         |         | ✔       | 使用 **微博热搜** / **知乎热搜** 主动触发                                                                          |
-| 自动复读       |         | ✔       | 根据群友发言随机复读                                                                                               |
-| 鸭鸭照         |         | ✔       | 使用 **哎鸭** / **哎呀** / **aiya** 主动触发， 主动进行 **早上好/中午好/晚上好/晚安鸭** 问好，需配置群号，默认开启 |
-| 速速挨打       |         | ✔       | @一个群成员并携带 **揍他** / **拍拍** 进行操作                                                                     |
-| 不可以打人     |         | ✔       | 当群成员发言中出现 挨打、挨锤、揍他 进行语言提示                                                                   |
-| 禁言套餐       |         | ✔       | 可自行配置违禁词，触发违禁词进行对应的惩罚                                                                         |
+| 插件名称       | 支持 v2 | 支持 v3 | 使用帮助                                                                                                                |
+| -------------- | ------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| 今日日报       |         | ✔       | [今日日报使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/get_day_news.md)         |
+| 60s 日报       |         | ✔       | [60s 日报使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/get_60s_day_news.md)     |
+| 撤回机器人消息 |         | ✔       | [撤回机器人消息使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/recall_bot_msg.md) |
+| 热搜榜         |         | ✔       | [热搜榜使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/hot_search.md)             |
+| 自动复读       |         | ✔       | [自动复读使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/repeater.md)             |
+| 鸭鸭照         |         | ✔       | [鸭鸭照使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/duck_img.md)               |
+| 速速挨打       |         | ✔       | [速速挨打使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/beating_fast.md)         |
+| 不可以打人     |         | ✔       | [不可以打人使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/can_not_hit.md)        |
+| 禁言套餐       |         | ✔       | [禁言套餐使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/mute_commdity.md)        |
 
 ## 重构插件
 
 ### 重构插件如有侵权，请联系我删除
 
-| 插件名称 | 支持 v2 | 支持 v3 | 重构自                                                                             | 备注                                                         |
-| -------- | ------- | ------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| 动物     |         | ✔       | [cat.js](https://gitee.com/koinori/Icepray-plugin/blob/master/apps/cat.js)         | 使用 **吸猫** **柴犬** **来只鸟** 主动触发，活动对于动物图片 |
-| 猜拳游戏 |         | ✔       | [dawo.js](https://github.com/SmallK111407/earth-k-plugin/blob/master/apps/dawo.js) | 使用 **开始决斗** 主动触发，**给我色图** 有彩蛋              |
-| 色色     |         | ✔       | [sese.js](https://github.com/SmallK111407/earth-k-plugin/blob/master/apps/sese.js) | 自行根据源码探索使用方法                                     |
+| 插件名称 | 支持 v2 | 支持 v3 | 重构自                                                                             | 使用帮助                                                                                                        |
+| -------- | ------- | ------- | ---------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| 动物     |         | ✔       | [cat.js](https://gitee.com/koinori/Icepray-plugin/blob/master/apps/cat.js)         | [动物使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/animal.md)           |
+| 猜拳游戏 |         | ✔       | [dawo.js](https://github.com/SmallK111407/earth-k-plugin/blob/master/apps/dawo.js) | [猜拳游戏使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/guessingGame.md) |
+| 色色     |         | ✔       | [sese.js](https://github.com/SmallK111407/earth-k-plugin/blob/master/apps/sese.js) | [色色使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/pixiv.md)            |
 
 ## 使用指南
 
@@ -89,61 +89,6 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
         ```sh
         mv muxia/refactorCode/*.js example
         ```
-
-<details>
-<summary>撤回机器人消息</summary>
-
-回复 Bot 的消息，并携带撤回，即可
-
-![](readme/help_img_6.png)
-
-</details>
-
-<details>
-<summary>热搜榜</summary>
-
-![](readme/help_img_7.png)
-
-![](readme/help_img_8.png)
-
-</details>
-
-<details>
-<summary>自动复读</summary>
-
-根据群内发送的**单文字**或者**单表情**进行跟随复读操作,阈值为 3，可自行更改
-
-![](readme/help_img_9.png)
-
-</details>
-
-<details>
-<summary>今日日报 cookie 获取教程</summary>
-
-#### 经过测试，cookie 的过期时间大致为三天，目前没找到更好的方法延长 cookie 时间，如果有好方法，请联系我
-
-1. 访问[微信公众号](https://mp.weixin.qq.com/)官网
-
-    ![](readme/help_img_1.png)
-
-2. 按 f12 打开浏览器控制台,点击 Network
-
-    ![](readme/help_img_2.png)
-
-3. 登录微信账号
-   登录成功后，在 network 页面找到下图标注的请求，点击
-
-    ![](readme/help_img_3.png)
-
-4. 找到 cookie 选项，右键 copy value
-
-    ![](readme/help_img_4.png)
-
-5. 粘贴到`my_plugin_get_day_news.js`插件的图示位置
-
-    ![](readme/help_img_5.png)
-
-</details>
 
 ## 更新日志
 

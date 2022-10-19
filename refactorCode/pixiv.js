@@ -8,7 +8,9 @@ import plugin from "../../lib/plugins/plugin.js";
  */
 
 let msgRes = [];
+//群聊18开关
 let r18 = 0;
+//私聊18开关
 let r18Master = 0;
 let url = "";
 let delMsgIdList = [];
