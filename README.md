@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia">
-    <img width="200" src="readme/project_logo.png">
+    <img width="200" src="https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/project_logo.png">
   </a>
 </p>
 
