@@ -23,9 +23,11 @@
 *   下图为定时任务的开关
 
     开启状态
+
     ![](./imgs/dayNews/3.png)
 
     关闭状态
+
     ![](./imgs/dayNews/4.png)
 
 ### cookie 配置教程
