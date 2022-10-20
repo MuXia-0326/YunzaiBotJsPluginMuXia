@@ -2,6 +2,8 @@
 
 ## 使用方法
 
+### 此插件有封号风险，请酌情使用
+
 使用 **来点色图** 主动触发
 
 ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/pixiv/1.png)
