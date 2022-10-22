@@ -172,7 +172,7 @@ async function sendPixivImg(e) {
                 for (let index in delMsgIdList) {
                     e.group.recallMsg(delMsgIdList[index]);
                 }
-            }, delMsg);
+            }, delMsg * 1000);
         }
     } else {
         for (let i in msgRes) {
