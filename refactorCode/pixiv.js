@@ -7,17 +7,21 @@ import plugin from "../../lib/plugins/plugin.js";
  * 此插件根据 https://github.com/SmallK111407/earth-k-plugin 的 sese.js 源码进行更改优化
  */
 
-let msgRes = [];
+//图文模式切换 变量
+let isSendImgFlag = 0;
+
 //群聊18开关
 let r18 = 0;
 //私聊18开关
 let r18Master = 0;
-let url = "";
-let delMsgIdList = [];
 //单次发送的图片数
 let sl = 3;
 //撤回时间s为单位
 let delMsg = 90;
+
+let url = "";
+let msgRes = [];
+let delMsgIdList = [];
 
 export class pixiv extends plugin {
     constructor() {
@@ -139,7 +143,12 @@ async function sendPixivImg(e) {
         for (let i = 0; i < sl; i++) {
             response = await fetch(url);
             res = await response.json();
-            msgRes[i] = [`https://www.pixiv.net/artworks/${res.data[0].pid}`, segment.image(res.data[0].urls.original)];
+            if (isSendImgFlag == 0) {
+                let sendText = `标题：${res.data[0].title}\n作者：${res.data[0].author}\n作品id：${res.data[0].pid}\n原网站：https://www.pixiv.net/artworks/${res.data[0].pid}\n可访问网站：${res.data[0].urls.original}`;
+                msgRes[i] = [sendText];
+            } else {
+                msgRes[i] = [segment.image(res.data[0].urls.original)];
+            }
         }
     } catch {
         e.reply("对不起，没有搜索到" + keyword);
