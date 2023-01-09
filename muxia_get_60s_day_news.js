@@ -71,7 +71,7 @@ function dayPushTask() {
 /** 发送60s日报 */
 async function send60sDayNews(e) {
     /** 60s日报url */
-    let url = `https://api.vvhan.com/api/60s`;
+    let url = `http://bjb.yunwj.top/php/tp/lj.php`;
     let res = await fetch(url).catch((err) => logger.error(err));
 
     if (res.status != 200) {
@@ -79,8 +79,9 @@ async function send60sDayNews(e) {
         await e.reply("[60s读懂世界] 日报获取失败");
         return;
     }
+    res = await res.json();
 
-    let msg = [segment.image(res.url)];
+    let msg = [segment.image(res.tp1)];
 
     if (e instanceof Group) {
         e.sendMsg(msg);
