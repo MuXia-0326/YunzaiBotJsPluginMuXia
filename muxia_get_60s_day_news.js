@@ -23,10 +23,7 @@ const pushTime = "0 30 8 * * ?";
 
 /**
  * 开启定时推送的群号，填写格式如下
- * 单个群号填写如下：
  * ["374900636"];
- * 多个个群号填写如下：
- * ["374900636","374900636"];
  */
 const groupNumberList = [];
 
@@ -76,7 +73,11 @@ async function send60sDayNews(e) {
 
     if (res.status != 200) {
         logger.error("[60s读懂世界] 日报获取失败");
-        await e.reply("[60s读懂世界] 日报获取失败");
+        if (e instanceof Group) {
+            await e.sendMsg("[60s读懂世界] 日报获取失败");
+        } else {
+            await e.reply("[60s读懂世界] 日报获取失败");
+        }
         return;
     }
     res = await res.json();
