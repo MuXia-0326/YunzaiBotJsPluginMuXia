@@ -2,7 +2,6 @@
  * @Author: MuXia
  * @Date: 2022/09/16
  */
-import fetch from "node-fetch";
 import schedule from "node-schedule";
 import { Group, segment } from "oicq";
 import common from "../../lib/common/common.js";
@@ -68,21 +67,23 @@ function dayPushTask() {
 /** 发送60s日报 */
 async function send60sDayNews(e) {
     /** 60s日报url */
-    let url = `http://bjb.yunwj.top/php/tp/lj.php`;
-    let res = await fetch(url).catch((err) => logger.error(err));
+    // let url = `http://bjb.yunwj.top/php/tp/lj.php`;
+    // let res = await fetch(url).catch((err) => logger.error(err));
 
-    if (res.status != 200) {
-        logger.error("[60s读懂世界] 日报获取失败");
-        if (e instanceof Group) {
-            await e.sendMsg("[60s读懂世界] 日报获取失败");
-        } else {
-            await e.reply("[60s读懂世界] 日报获取失败");
-        }
-        return;
-    }
-    res = await res.json();
+    // if (res.status != 200) {
+    //     logger.error("[60s读懂世界] 日报获取失败");
+    //     if (e instanceof Group) {
+    //         await e.sendMsg("[60s读懂世界] 日报获取失败");
+    //     } else {
+    //         await e.reply("[60s读懂世界] 日报获取失败");
+    //     }
+    //     return;
+    // }
+    // res = await res.json();
 
-    let msg = [segment.image(res.tp1)];
+    let url = `http://bjb.yunwj.top/php/tp/60.jpg`;
+
+    let msg = [segment.image(url)];
 
     if (e instanceof Group) {
         e.sendMsg(msg);
