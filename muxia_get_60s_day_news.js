@@ -83,7 +83,7 @@ async function send60sDayNews(e) {
 
     let url = `http://bjb.yunwj.top/php/tp/60.jpg`;
 
-    let msg = [segment.image(url)];
+    let msg = [segment.image(url, false, 120)];
 
     if (e instanceof Group) {
         e.sendMsg(msg);
