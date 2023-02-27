@@ -33,6 +33,15 @@ const groupNumberList = [];
 //开启定时任务（需要关闭，注释此行即可
 dayPushDuckImg();
 
+//鸭鸭图url
+const duckUrl = "https://random-d.uk/api/v2/random";
+//猫猫图url
+const catUrl = "https://shibe.online/api/cats";
+//柴犬图url
+const shibesUrl = "http://shibe.online/api/shibes";
+//小鸟图url
+const birdUrl = "https://shibe.online/api/birds";
+
 export class duckImg extends plugin {
     constructor() {
         super({
@@ -65,16 +74,31 @@ function dayPushDuckImg() {
     schedule.scheduleJob(pushTime, () => {
         for (var i = 0; i < groupNumberList.length; i++) {
             let group = Bot.pickGroup(groupNumberList[i]);
-            getDuckImg(group);
+
+            let hour = new Date().getHours();
+            let sendText = "";
+            if (hour == 8) {
+                sendText = "早上好！快谢谢鸭鸭。";
+                getDuckImg(group, sendText);
+            } else if (hour == 12) {
+                sendText = "中午好！快谢谢猫猫。";
+                getUrlImg(group, catUrl, sendText);
+            } else if (hour == 19) {
+                sendText = "晚上好！快谢谢柴犬。";
+                getUrlImg(group, shibesUrl, sendText);
+            } else if (hour == 21) {
+                sendText = "晚安好梦！快谢谢小鸟。";
+                getUrlImg(group, birdUrl, sendText);
+            }
+
             common.sleep(3000);
         }
     });
 }
 
-async function getDuckImg(e) {
+async function getDuckImg(e, sendText) {
     /** 鸭鸭图url */
-    let url = `https://random-d.uk/api/v2/random`;
-    let res = await fetch(url).catch((err) => logger.error(err));
+    let res = await fetch(duckUrl).catch((err) => logger.error(err));
 
     if (res.status != 200) {
         logger.error("[鸭鸭照] 鸭图获取失败");
@@ -86,22 +110,23 @@ async function getDuckImg(e) {
     let msg = [segment.image(res.url), res.message];
 
     if (e instanceof Group) {
-        let hour = new Date().getHours();
-        let sendText = "";
-        if (hour == 8) {
-            sendText = "早上好鸭";
-        } else if (hour == 12) {
-            sendText = "中午好鸭";
-        } else if (hour == 19) {
-            sendText = "晚上好鸭";
-        } else if (hour == 21) {
-            sendText = "晚安鸭";
-        }
         msg.unshift(sendText);
         e.sendMsg(msg);
     } else {
         //添加@成员
         msg.unshift(segment.at(e.user_id));
         e.reply(msg);
+    }
+}
+
+async function getUrlImg(e, url, sendText) {
+    let res = await (await fetch(url)).json();
+    let imgUrl = res.toString();
+
+    let msg = [segment.image(imgUrl)];
+
+    if (e instanceof Group) {
+        msg.unshift(sendText);
+        e.sendMsg(msg);
     }
 }
