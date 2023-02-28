@@ -110,6 +110,6 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 ## 其他
 
 -   群号：374900636
--   Yunzai-Bot：[☞Github](https://github.com/Le-niao/Yunzai-Bot)/[☞Git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)](https://gitee.com/Le-niao/Yunzai-Bot) 
+-   Yunzai-Bot：[☞Github](https://github.com/Le-niao/Yunzai-Bot) / [☞Git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)](https://gitee.com/Le-niao/Yunzai-Bot) 
 -   Yunzai-Bot轻量版(无原神功能)：[☞Github](https://github.com/Nwflower/yunzai-bot-lite) / [☞Git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)](https://gitee.com/Nwflower/yunzai-bot-lite)
--   Yunzai-Bot 插件库：[☞github](https://github.com/yhArcadia/Yunzai-Bot-plugins-index) / [☞(Git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
+-   Yunzai-Bot 插件库：[☞github](https://github.com/yhArcadia/Yunzai-Bot-plugins-index) / [☞Git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
