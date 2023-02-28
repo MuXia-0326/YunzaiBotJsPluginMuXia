@@ -99,6 +99,8 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 - 2022-10-14 新增**60s 读懂世界**插件，上传部分重构插件
 - 2022-10-19 为每个 js 插件单独编写一个使用方法，方便查阅
 - 2022-10-22 给 **色色插件** 添加图文开关，默认为文字模式
+- 2023-02-17 修复 **60s日报插件** 自动推送异常的问题
+- 2023-02-28 **鸭鸭照插件** 每日自动问好功能，新增了猫猫，柴犬，小鸟
 
 ## 免责声明
 
@@ -108,5 +110,6 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 ## 其他
 
 -   群号：374900636
--   [Yunzai-Bot](https://github.com/Le-niao/Yunzai-Bot)
--   Yunzai-Bot 插件库：[☞github](https://github.com/yhArcadia/Yunzai-Bot-plugins-index) [☞gitee (git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico))](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
+-   Yunzai-Bot：[☞Github](https://github.com/Le-niao/Yunzai-Bot)/[☞Git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)](https://gitee.com/Le-niao/Yunzai-Bot) 
+-   Yunzai-Bot轻量版(无原神功能)：[☞Github](https://github.com/Nwflower/yunzai-bot-lite) / [☞Git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)](https://gitee.com/Nwflower/yunzai-bot-lite)
+-   Yunzai-Bot 插件库：[☞github](https://github.com/yhArcadia/Yunzai-Bot-plugins-index) / [☞(Git![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/readme/e_.ico)](https://gitee.com/yhArcadia/Yunzai-Bot-plugins-index)
