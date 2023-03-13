@@ -102,7 +102,11 @@ async function getDuckImg(e, sendText) {
 
     if (res.status != 200) {
         logger.error("[鸭鸭照] 鸭图获取失败");
-        await e.reply("[鸭鸭照] 鸭图获取失败");
+        if (e instanceof Group) {
+            await e.sendMsg("[鸭鸭照] 鸭图获取失败");
+        } else {
+            await e.reply("[鸭鸭照] 鸭图获取失败");
+        }
         return;
     }
     res = await res.json();
