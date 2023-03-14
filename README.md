@@ -23,6 +23,15 @@ logo 来自画师[ｍｅｍｅｎｏ](https://www.pixiv.net/users/62635184)，�
 
 </div>
 
+> 由于最近oicq出现登录异常的问题，不少朋友将yunzaibot换成的icqq的版本，出现定时任务无法正常发送的情况，请按下面的提示进行修改，即可恢复定时推送的功能
+```js
+找到项目中的
+import { Group, segment } from "oicq";
+修改成下面的样子
+import { Group, segment } from "icqq";
+```
+
+
 # 插件列表
 
 **有插件配置问题，优先看使用说明，不懂的再加群询问**
