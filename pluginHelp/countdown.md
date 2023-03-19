@@ -29,3 +29,7 @@
     关闭状态
 
     ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/countdown/2.png)
+
+## 注意事项
+
+**因为本插件需要用到项目 img 目录下的图片进行信息发送，所以是本本插件，就必须将 img 下的文件放到指定位置**
