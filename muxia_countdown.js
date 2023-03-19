@@ -19,11 +19,10 @@ import plugin from "../../lib/plugins/plugin.js";
     │  └──────────── 分，取值：0 - 59
     └─────────────── 秒，取值：0 - 59（可选）
 */
-const pushTime = "0 24 10 * * ?";
+const pushTime = "0 30 7 * * ?";
 
 /**
  * 开启定时推送的群号，填写格式如下
- * 单个群号填写如下：
  * ["374900636"];
  * 多个个群号填写如下：
  * ["374900636","374900636"];
@@ -31,7 +30,7 @@ const pushTime = "0 24 10 * * ?";
 const groupNumberList = [];
 
 //开启定时任务（需要关闭，注释此行即可
-//dayPushCountdown();
+dayPushCountdown();
 
 //高考日期
 const collegeEntranceTime = "06/07";
@@ -76,7 +75,8 @@ async function sendCollegeEntranceCountdown(e) {
     const _path = process.cwd();
 
     let nowDate = getNowFormatDate();
-    let endYear = nowDate.month > 6 ? nowDate.year + 1 : nowDate.year;
+    let endYear = nowDate.month >= 6 && nowDate.strDate > 8 ? nowDate.year + 1 : nowDate.year;
+    console.log(endYear);
 
     let nowStr = nowDate.year + "/" + nowDate.month + "/" + nowDate.strDate;
     let endStr = endYear + "/" + collegeEntranceTime;
@@ -86,16 +86,21 @@ async function sendCollegeEntranceCountdown(e) {
     let text = "";
 
     if (nowDate.month < 6 || (nowDate.month == 6 && nowDate.strDate < 7)) {
-        text += `距离${nowDate.year}高考还有${days}天`;
+        text += `距离${nowDate.year}年高考还有${days}天`;
+    } else if (nowDate.month == 6 && (nowDate.strDate == 7 || nowDate.strDate == 8)) {
+        text += nowDate.strDate == 7 ? `今天是${nowDate.year}年高考的第一天，` : `今天是${nowDate.year}年高考的第二天，`;
+        text += `预祝本群各位考生，能在考场上超常发挥，考的全会，蒙的全对，考上自己心意的学校！`;
     } else if (nowDate.month < 8) {
-        text += `距离${nowDate.year}高考已经结束\n距离${endYear}高考还有${days}天`;
+        text += `${nowDate.year}年高考已经结束\n距离${endYear}年高考还有${days}天`;
     } else {
-        text += `距离${endYear}高考还有${days}天`;
+        text += `距离${endYear}年高考还有${days}天`;
     }
 
-    await getGoodSentence().then((res) => {
-        text += "\n\n今日鸡汤：\n" + res;
-    });
+    if (nowDate.month != 6 && (nowDate.strDate != 7 || nowDate.strDate != 8)) {
+        await getGoodSentence().then((res) => {
+            text += "\n\n今日鸡汤：\n" + res;
+        });
+    }
 
     let msg = [
         //文本消息
