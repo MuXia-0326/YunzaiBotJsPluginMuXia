@@ -76,7 +76,6 @@ async function sendCollegeEntranceCountdown(e) {
 
     let nowDate = getNowFormatDate();
     let endYear = nowDate.month >= 6 && nowDate.strDate > 8 ? nowDate.year + 1 : nowDate.year;
-    console.log(endYear);
 
     let nowStr = nowDate.year + "/" + nowDate.month + "/" + nowDate.strDate;
     let endStr = endYear + "/" + collegeEntranceTime;
@@ -133,7 +132,15 @@ async function getGoodSentence() {
     }
     res = await res.json();
 
-    let number = parseInt(Math.random() * 20 + 0);
+    let number = parseInt(Math.random() * 20 - 1);
+
+    let returnBody = "";
+
+    if (res.data.ret_array.length == 0 || res.data.ret_array[0].list.length < number + 1) {
+        returnBody = getGoodSentence();
+        return returnBody;
+    }
+
     return res.data.ret_array[0].list[number].body[0];
 }
 
