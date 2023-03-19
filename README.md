@@ -48,6 +48,7 @@ import { Group, segment } from "icqq";
 | 速速挨打 | ❌ | ✔ | [muxia_beating_fast.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_beating_fast.js) | [速速挨打使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/beating_fast.md) |
 | 不可以打人 | ❌ | ✔ | [muxia_can_not_hit.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_can_not_hit.js) | [不可以打人使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/can_not_hit.md) |
 | 禁言套餐 | ❌ | ✔ | [muxia_mute_commdity.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_mute_commdity.js) | [禁言套餐使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/mute_commdity.md) |
+| 倒计时 | ❌ | ✔ | [muxia_countdown.js](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/blob/master/muxia_countdown.js) | [倒计时使用帮助](https://github.com/MuXia-0326/YunzaiBotJsPluginMuXia/tree/master/pluginHelp/countdown.md) |
 
 ## 重构插件
 
@@ -110,6 +111,7 @@ import { Group, segment } from "icqq";
 - 2022-10-22 给 **色色插件** 添加图文开关，默认为文字模式
 - 2023-02-17 修复 **60s日报插件** 自动推送异常的问题
 - 2023-02-28 **鸭鸭照插件** 每日自动问好功能，新增了猫猫，柴犬，小鸟
+- 2023-03-19 新增 **倒计时插件** 现有功能，每天提醒群内高考生，高考倒计时
 
 ## 免责声明
 
