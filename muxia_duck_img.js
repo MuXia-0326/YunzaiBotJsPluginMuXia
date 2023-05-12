@@ -8,20 +8,9 @@ import { Group, segment } from "oicq";
 import common from "../../lib/common/common.js";
 import plugin from "../../lib/plugins/plugin.js";
 
-/* 各位代表的意思 *-代表任意值 ？-不指定值，仅日期和星期域支持该字符。 （想了解更多，请自行搜索Cron表达式学习）
-    *  *  *  *  *  *
-    ┬  ┬  ┬  ┬  ┬  ┬
-    │  │  │  │  │  |
-    │  │  │  │  │  └ 星期几，取值：0 - 7，其中 0 和 7 都表示是周日
-    │  │  │  │  └─── 月份，取值：1 - 12
-    │  │  │  └────── 日期，取值：1 - 31
-    │  │  └───────── 时，取值：0 - 23
-    │  └──────────── 分，取值：0 - 59
-    └─────────────── 秒，取值：0 - 59（可选）
-*/
-const pushTime = "0 0 8,12,19,21 * * ?";
-
 /**
+ * 定制群号 必须在这配置
+ *
  * 开启定时推送的群号，填写格式如下
  * 单个群号填写如下：
  * ["374900636"];
@@ -30,8 +19,44 @@ const pushTime = "0 0 8,12,19,21 * * ?";
  */
 const groupNumberList = [];
 
+/**
+ * 配置文件
+ * time 发送时间 单位小时 当前不支持单个的分钟修改
+ * sendText 发送文本内容
+ * imgType 发送图片类型 1-鸭鸭 2-猫猫 3-柴犬 4-鸟 不同时间段的图片可重复，按自己的喜好更改
+ *
+ * all 代表所有群的默认配置，如需定制单个群的发送时间、文本内容和配图
+ * 请复制整个all，然后将all改为定制群号配置文件下方有个示例，按示例的样子配置即可
+ * 定制群号 必须在上面配置
+ *
+ * 发送次数可以自定义，有几组数据就会发几次，只要你想，你可以每小时都发一次
+ */
+const config = {
+    all: [
+        {
+            time: 8,
+            sendText: "早上好！快谢谢鸭鸭。",
+            imgType: 1
+        },
+        {
+            time: 12,
+            sendText: "中午好！快谢谢猫猫。",
+            imgType: 2
+        },
+        {
+            time: 19,
+            sendText: "晚上好！快谢谢柴犬。",
+            imgType: 3
+        },
+        {
+            time: 21,
+            sendText: "晚安好梦！快谢谢小鸟。",
+            imgType: 4
+        }
+    ]
+};
 //开启定时任务（需要关闭，注释此行即可
-dayPushDuckImg();
+openPush();
 
 //鸭鸭图url
 const duckUrl = "https://random-d.uk/api/v2/random";
@@ -69,31 +94,96 @@ export class duckImg extends plugin {
     }
 }
 
-/** 定时推送 */
-function dayPushDuckImg() {
-    schedule.scheduleJob(pushTime, () => {
-        for (var i = 0; i < groupNumberList.length; i++) {
-            let group = Bot.pickGroup(groupNumberList[i]);
+function openPush() {
+    // 创建存储对象
+    let pushEntityList = [];
 
-            let hour = new Date().getHours();
-            let sendText = "";
-            if (hour == 8) {
-                sendText = "早上好！快谢谢鸭鸭。";
-                getDuckImg(group, sendText);
-            } else if (hour == 12) {
-                sendText = "中午好！快谢谢猫猫。";
-                getUrlImg(group, catUrl, sendText);
-            } else if (hour == 19) {
-                sendText = "晚上好！快谢谢柴犬。";
-                getUrlImg(group, shibesUrl, sendText);
-            } else if (hour == 21) {
-                sendText = "晚安好梦！快谢谢小鸟。";
-                getUrlImg(group, birdUrl, sendText);
+    // 获取所有key，将需要推送群进行分组
+    let group = new Array();
+    for (let key in config) {
+        group.push(key);
+    }
+
+    // 根据配置情况，组装对象
+    if (group.length > 1) {
+        let pushNumberList = groupNumberList.slice(0);
+        for (let i in group) {
+            if (group[i] != "all") {
+                let flag = pushNumberList.indexOf(group[i]);
+                if (flag > -1) {
+                    pushNumberList.splice(flag, 1);
+                }
+
+                pushEntityList.push(
+                    {
+                        name: "all",
+                        list: pushNumberList
+                    },
+                    {
+                        name: group[i],
+                        list: [group[i]]
+                    }
+                );
             }
-
-            common.sleep(3000);
         }
-    });
+    } else {
+        pushEntityList.push({
+            name: group[0],
+            list: groupNumberList
+        });
+    }
+
+    // 组装cron表达式
+    for (let i in pushEntityList) {
+        let sendConfig = config[pushEntityList[i].name];
+
+        let time = new Array(4);
+        for (let key in sendConfig) {
+            time[key] = sendConfig[key].time;
+        }
+
+        let pushTime = `0 0 ${time.join(",")} * * ?`;
+        pushEntityList[i].pushTime = pushTime;
+        pushEntityList[i].sendConfig = sendConfig;
+    }
+
+    // 开启定时任务
+    addPushTask(pushEntityList);
+}
+
+/** 定时推送 */
+function addPushTask(pushEntityList) {
+    for (let index in pushEntityList) {
+        let push = pushEntityList[index];
+
+        schedule.scheduleJob(push.pushTime, () => {
+            for (var i = 0; i < push.list.length; i++) {
+                let group = Bot.pickGroup(push.list[i]);
+
+                let hour = new Date().getHours();
+
+                for (let q in push.sendConfig) {
+                    if (hour == push.sendConfig[q].time) {
+                        pushImgByType(group, push.sendConfig[q].sendText, push.sendConfig[q].imgType);
+                    }
+                }
+
+                common.sleep(3000);
+            }
+        });
+    }
+}
+
+async function pushImgByType(e, sendText, typeId) {
+    if (typeId == 1) {
+        getDuckImg(e, sendText);
+    } else if (typeId == 2) {
+        getUrlImg(e, catUrl, sendText);
+    } else if (typeId == 3) {
+        getUrlImg(e, shibesUrl, sendText);
+    } else if (typeId == 4) {
+        getUrlImg(e, birdUrl, sendText);
+    }
 }
 
 async function getDuckImg(e, sendText) {

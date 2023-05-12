@@ -4,6 +4,8 @@
 
 使用 **哎鸭** / **哎呀** / **aiya** 主动触发，支持主动进行 **早上好/中午好/晚上好/晚安鸭** 问好
 
+并且问好能自行配置，具体看下面的配置指南
+
 如果需要使用问好功能，需要进行配置操作，参考下发的配置指南
 
 ## 配置指南
@@ -12,20 +14,103 @@
 
 **以下所有操作都是在，打开项目里面的 `muxia_duck_img.js` 文件前提下进行操作的**
 
--   下图为修改定时任务的触发时间的代码
+-   下面为设置定时任务推送群号的代码
 
-    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/duckImg/1.png)
+    **定制群号 必须在这配置**
 
--   下图为设置定时任务推送群号的代码
+    ```js
+    /**
+     * 定制群号 必须在这配置
+     *
+     * 开启定时推送的群号，填写格式如下
+     * 单个群号填写如下：
+     * ["374900636"];
+     * 多个个群号填写如下：
+     * ["374900636","374900636"];
+     */
+    const groupNumberList = [];
+    ```
 
-    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/duckImg/2.png)
+-   下面为定时任务的开关
 
-*   下图为定时任务的开关
+    > 在文件中找到`openPush`方法
 
     开启状态
 
-    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/duckImg/3.png)
+    ```js
+    //开启定时任务（需要关闭，注释此行即可
+    openPush();
+    ```
 
     关闭状态
 
-    ![](https://raw.githubusercontent.com/MuXia-0326/YunzaiBotJsPluginMuXia/master/pluginHelp/imgs/duckImg/4.png)
+    ```js
+    //开启定时任务（需要关闭，注释此行即可
+    //openPush();
+    ```
+
+-   下面为自定义配置核心部分
+
+    快速指南：
+
+    -   全部群共用一个配置，这样操作
+
+        最基础的配置文件就是下面的样子
+        **不能随意修改**
+        **随意修改造成的bug自行负责！！！**
+        ```js
+        const config = {
+            all: [
+                {
+                    // time 发送时间 单位小时 当前不支持单个的分钟修改
+                    time: 8,
+                    // sendText 发送文本内容
+                    sendText: "早上好！快谢谢鸭鸭。",
+                    // imgType 发送图片类型 1-鸭鸭 2-猫猫 3-柴犬 4-鸟 不同时间段的图片可重复，按自己的喜好更改
+                    imgType: 1
+                }
+            ]
+        };
+        ```
+
+        下面的为单次发送的配置，如果想新增发送次数，将下面的复制一份在上面的`[]`中，多个直接用`,`分割
+        **用英文符号的`,`**
+        **用英文符号的`,`**
+        **用英文符号的`,`**
+        ```js
+        {
+            // time 发送时间 单位小时 当前不支持单个的分钟修改
+            time: 8,
+            // sendText 发送文本内容
+            sendText: "早上好！快谢谢鸭鸭。",
+            // imgType 发送图片类型 1-鸭鸭 2-猫猫 3-柴犬 4-鸟 不同时间段的图片可重复，按自己的喜好更改
+            imgType: 1
+        }
+        ```
+
+    -   一部分群用通用配置，单独一两个群独立配置，这样操作
+        首先`all：[]`下面的配置是通用配置
+        当你需要为群单独配置的时候,请编写一个`群号:[]`的配置与`all：[]`在同一级,如下面的代码所示，添加发送次数和上面相同，参考即可
+
+        另外单独的群号，必须在`const groupNumberList = [];`中配置
+        ```js
+        const config = {
+            all: [
+                {
+                    // time 发送时间 单位小时 当前不支持单个的分钟修改
+                    time: 8,
+                    // sendText 发送文本内容
+                    sendText: "早上好！快谢谢鸭鸭。",
+                    // imgType 发送图片类型 1-鸭鸭 2-猫猫 3-柴犬 4-鸟 不同时间段的图片可重复，按自己的喜好更改
+                    imgType: 1
+                }
+            ],
+            326615777: [
+                {
+                    time: 10, // 10点还早上好？？？
+                    sendText: "早起的鸟儿有虫吃！！！",
+                    imgType: 4
+                }
+            ]
+        };
+        ```
