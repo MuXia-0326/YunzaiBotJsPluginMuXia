@@ -75,7 +75,7 @@ async function sendCollegeEntranceCountdown(e) {
     const _path = process.cwd();
 
     let nowDate = getNowFormatDate();
-    let endYear = nowDate.month >= 6 && nowDate.strDate > 8 ? nowDate.year + 1 : nowDate.year;
+    let endYear = (nowDate.month == 6 && nowDate.strDate > 8) || nowDate.month > 6 ? nowDate.year + 1 : nowDate.year;
 
     let nowStr = nowDate.year + "/" + nowDate.month + "/" + nowDate.strDate;
     let endStr = endYear + "/" + collegeEntranceTime;
